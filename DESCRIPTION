@@ -1,0 +1,16 @@
+Package: MBTAr
+Type: Package
+Title: Access Data from the Massachusetts Bay Transit Authority (MBTA) Web API
+Version: 1.1.0
+Authors@R: person("Justin", "de Benedictis-Kessner", email = "justindbk@gmail.com", role = c("aut", "cre"))
+Depends:
+  R (>= 3.1.2)
+LazyData: true
+Description: Access to the MBTA's GTFS-compatible API for R. Creates an easy-to-use
+  bundle of functions to work with all the built-in calls to the MBTA API.
+  Allows users to download realtime tracking data in dataframe format that is
+  manipulable in standard R analytics functions. Pulls performance statistics
+  in both realtime and for historical dates and trips (after July 2015).
+License: GPL-3
+Imports:
+  jsonlite
