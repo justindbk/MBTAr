@@ -9,8 +9,9 @@ readable name for the route for which stops are returned. Example: "Red Line"}}
 \value{ \item{stop_id}{The GTFS-compatible unique identifier for the stop.
 Example: "70063"} \item{address}{Street address or intersection at which
 stop is located. (note: can be empty for non-parent stations).}
-\item{description}{Full description of stop or entrance/exit.} \item{latitude}
-{The GTFS-compatible latitude of the station. Example: "42.3967399597168"}
+\item{description}{Full description of stop or entrance/exit.}
+\item{latitude}{The GTFS-compatible latitude of the station.
+Example: "42.3967399597168"}
 \item{location_type}{Takes value of 0, 1, or 2, corresponding to stops, parent
 stations, and entrances/exits, respectively.} \item{longitude}{The GTFS-
 compatible longitude of the station. Example: "-71.1218185424805"}

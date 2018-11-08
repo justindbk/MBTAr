@@ -6,8 +6,6 @@ affect, along with timeframes that the alert is in effect. Returns all
 possible information for a given alert, often with empty fields.} \usage{
 Talerts()
 } %- maybe also 'usage' for other objects documented here.
-\arguments{}
-
 \value{ \item{alert_id}{The unique identifier for the alert}
 \item{effect_name}{The human-readable name for the effect. Example: "Shuttle
 bus"} \item{effect}{The GTFS-realtime-compatible code for the effect. Example:
@@ -91,6 +89,4 @@ station does not exist.} } }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{ \code{\link{Talertbyid}} \code{\link{Talertsbyroute}}
-\code{\link{Talertsbystop}} \code{\link{Talertheaders}}
-\code{\link{Talertheadersbyroute}} \code{\link{Talertheadersbystop}} }
+\seealso{ \code{\link{Talertbyid}} }

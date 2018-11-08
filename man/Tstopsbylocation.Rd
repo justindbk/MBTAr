@@ -13,7 +13,7 @@ Defaults to 0.01 degrees, or approximately half a mile.} }
 Example: "70063"} \item{address}{Street address or intersection at which
 stop is located. (note: can be empty for non-parent stations).}
 \item{description}{Full description of stop or entrance/exit.}
-\item{latitude} {The GTFS-compatible latitude of the station. Example:
+\item{latitude}{The GTFS-compatible latitude of the station. Example:
 "42.3967399597168"}
 \item{location_type}{Takes value of 0, 1, or 2, corresponding to stops, parent
 stations, and entrances/exits, respectively.} \item{longitude}{The GTFS-
