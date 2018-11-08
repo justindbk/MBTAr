@@ -3,7 +3,11 @@ Ttraveltimes = function(from_stop_id, to_stop_id, route_id=NULL, from_datetime=(
   from_datetime <- as.integer(from_datetime) # defaults to 30 minutes ago
   to_datetime <- as.integer(to_datetime) # defaults to now
   base_url <- paste0("http://realtime.mbta.com/developer/api/v2.1/",query,"?api_key=",api_key,"&format=json")
-  full_url <- paste0(base_url,"&from_stop=",from_stop_id,"&to_stop=",to_stop_id,ifelse(length(route_id)>0,paste0("&route=",route_id),""),"&from_datetime=",from_datetime,"&to_datetime=",to_datetime)
+  full_url <- paste0(base_url,"&from_stop=",from_stop_id,
+                     "&to_stop=",to_stop_id,
+                     ifelse(length(route_id)>0, paste0("&route=",route_id),""),
+                     "&from_datetime=",from_datetime,
+                     "&to_datetime=",to_datetime)
   if(from_stop_id %in% c(70061,70105,70093,70036,70001,70060,70038) | to_stop_id %in% c(70061,70105,70093,70036,70001,70060,70038)){
     warning("Travel times not yet available for terminal stations.")
     allout <- NA
