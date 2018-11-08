@@ -5,7 +5,7 @@ Theadwaysperformance <- function(enter_time,exit_time=NULL,enter_route_name,exit
     data$exit_time_imputed <- NULL
     data[,c(exit_time)] <- as.POSIXlt(data[,c(enter_time)]) + 1800 # add 30 minutes by default
   }
-  route_table <- routes # has all routes but Green with separate letter identifiers
+  route_table <- MBTAr::routes # has all routes but Green with separate letter identifiers
   data$route_id_enter <- route_table$route_id[match(x = data[,c(enter_route_name)], table = route_table$route_name)]
   data$route_id_exit <- route_table$route_id[match(x = data[,c(exit_route_name)], table = route_table$route_name)]
 

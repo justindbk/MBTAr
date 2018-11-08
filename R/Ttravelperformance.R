@@ -7,7 +7,7 @@ Ttravelperformance = function(enter_time,exit_time=NULL,enter_route_name,exit_ro
     data[,c(exit_time)] <- as.POSIXct(data[,c(enter_time)]) + 1800 # add 30 minutes by default
   }
 #   if(enter_route_name %in% names(data)){ # if "enter_route_name" specifies a column in dataset...
-    route_table <- routes
+    route_table <- MBTAr::routes
     data$route_id_enter <- route_table$route_id[match(x = data[,c(enter_route_name)], table = route_table$route_name)]
     data$route_id_exit <- route_table$route_id[match(x = data[,c(exit_route_name)], table = route_table$route_name)]
 

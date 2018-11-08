@@ -16,6 +16,6 @@ Troutesbystop <- function(stop_id=NULL,api_key){
   #   allmodes <- rbind(allmodes,allroutes)
   # }
   # return(allroutes)
-  .Deprecated(msg = "Routes information no longer requires API call, and its output can now be called directly via the object 'routes.'")
+  .Deprecated(msg = "Routes information no longer requires API call, and its output can now be called directly via the object MBTAr::routes.")
 }
 

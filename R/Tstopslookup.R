@@ -1,6 +1,6 @@
 Tstopslookup = function(stop_name){
   # allroutes <- Troutes(api_key = api_key) # preload from package instead
-  allroutes <- routes
+  allroutes <- MBTAr::routes
   stopmatches <- NULL
   for(i in 1:length(allroutes$route_id)){
     allstops <- Tstopsbyroute(route_id = allroutes$route_id[i])
