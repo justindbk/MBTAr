@@ -1,20 +1,20 @@
-Tstopsbyroute <- function(route_id=NULL,route_name=NULL,api_key){
+Tstopsbyroute <- function(route_id=NULL,route_name=NULL){
   # finds MBTA stops by GTFS route id number or route name
-  query <- "stopsbyroute"
-  base_url <- paste0("http://realtime.mbta.com/developer/api/v2/",query,"?api_key=",api_key,"&format=json")
+  query <- "stops"
+  base_url <- paste0("https://api-v3.mbta.com/",query)
   if(length(route_id)==0){ # checks if this is empty
     # routes <- Troutes(api_key) # preload from package instead
     route_id <- routes$route_id[which(routes$route_name==route_name)] # finds route_id from entered route_name
     if(length(route_id)==0){ # if nothing found
-      stop('Please enter a valid GTFS-compatible route id or valid route name. Refer to the output of Troutes() for this information.')
+      stop("Please enter a valid GTFS-compatible route id or valid route name. Refer to the included dataframe 'routes' for this information.")
     }
   }
   if(length(route_id)>0){ # if either entered or found via name
     if((route_id %in% routes$route_id)==F){ # check if not in list
-      stop('Please enter a valid GTFS-compatible route id or valid route name. Refer to the output of Troutes() for this information.')
+      stop("Please enter a valid GTFS-compatible route id or valid route name. Refer to the included dataframe 'routes' for this information.")
     }
   }
-  full_url <- paste0(base_url,"&route=",route_id)
+  full_url <- paste0(base_url,"?route=",route_id)
   rawdata <- readLines(full_url, warn = F)
   dl <- jsonlite::fromJSON(txt=rawdata,simplifyDataFrame = T,flatten=F)
   allout <- NULL
