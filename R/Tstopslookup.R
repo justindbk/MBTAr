@@ -1,9 +1,9 @@
-Tstopslookup = function(stop_name,api_key){
+Tstopslookup = function(stop_name){
   # allroutes <- Troutes(api_key = api_key) # preload from package instead
   allroutes <- routes
   stopmatches <- NULL
   for(i in 1:length(allroutes$route_id)){
-    allstops <- Tstopsbyroute(route_id=allroutes$route_id[i],api_key = api_key)
+    allstops <- Tstopsbyroute(route_id = allroutes$route_id[i])
     thismatches <- allstops[which(
       gsub("(\\w+)\\W+.*","\\1",x=allstops$stop_name) == gsub("(\\w+)\\W+.*","\\1",x=stop_name) | # cuts name to first word
         gsub("(\\w+)\\W+.*","\\1",x=allstops$parent_station_name) == gsub("(\\w+)\\W+.*","\\1",x=stop_name)),]

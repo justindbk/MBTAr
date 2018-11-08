@@ -13,6 +13,5 @@ Tstopsbylocation <- function(lat, lon, radius = 0.01){
     this_station <- data.frame(stop_id, df, parent_station,row.names = NULL)
     allout <- rbind(allout,this_station)
   }
-  #stop_id, stop_name, parent_station, parent_station_name, stop_lat, stop_lon, distance
   return(allout)
 }

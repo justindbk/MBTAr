@@ -18,12 +18,12 @@ Tstopsbyroute <- function(route_id=NULL,route_name=NULL){
   rawdata <- readLines(full_url, warn = F)
   dl <- jsonlite::fromJSON(txt=rawdata,simplifyDataFrame = T,flatten=F)
   allout <- NULL
-  for(i in 1:length(dl$direction$direction_id)){
-    direction_ids <- dl$direction$direction_id[i]
-    direction_names <- dl$direction$direction_name[i]
-    stops <- dl$direction$stop[[i]][,c("stop_order","stop_id","stop_name","parent_station","parent_station_name","stop_lat","stop_lon")]
-    thisout <- data.frame(direction_id=direction_ids,direction_name=direction_names,stops)
-    allout <- rbind(allout,thisout)
+  for(i in 1: length(dl$data$id)){
+    stop_id <- dl$data$id[i]
+    df <- dl$data$attributes[i,]
+    parent_station <- ifelse("id" %in% names(dl$data$relationships$parent_station$data),dl$data$relationships$parent_station$data$id[i], NA)
+    this_station <- data.frame(stop_id, df, parent_station,row.names = NULL)
+    allout <- rbind(allout,this_station)
   }
   return(allout)
 }
