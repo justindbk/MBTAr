@@ -4,15 +4,9 @@
 Find current list of all MBTA alerts, including all routes and stops they
 affect, along with timeframes that the alert is in effect. Returns all
 possible information for a given alert, often with empty fields.} \usage{
-Talerts(include_access_alerts = FALSE, include_service_alerts = TRUE, api_key)
+Talerts()
 } %- maybe also 'usage' for other objects documented here.
-\arguments{
-\item{include_access_alerts}{ Whether or not alerts pertaining to
-accessibility (elevators, escalators) should be returned. Data type: logical.
-Defaults to FALSE. } \item{include_service_alerts}{ Whether or not service
-alerts should be returned. Data type: logical. Defaults to TRUE. }
-\item{api_key}{ API key for MBTA API. To obtain one, visit the MBTA Developer
-Portal (\url{http://realtime.mbta.com/Portal/}) } }
+\arguments{}
 
 \value{ \item{alert_id}{The unique identifier for the alert}
 \item{effect_name}{The human-readable name for the effect. Example: "Shuttle

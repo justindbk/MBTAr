@@ -23,7 +23,7 @@ Theadwaysperformance <- function(enter_time,exit_time=NULL,enter_route_name,exit
       enter_stop_table <- NULL
       exit_stop_table <- NULL
       if(!is.na(data$route_id_enter[i])){
-        stop_table <- Tstopsbyroute(route_id = data$route_id_enter[i], api_key = api_key)
+        stop_table <- Tstopsbyroute(route_id = data$route_id_enter[i])
         enter_stop_table <- stop_table[which(gsub("(\\w+)\\W+.*","\\1",x=stop_table$parent_station_name) == gsub("(\\w+)\\W+.*","\\1",x=data[i,c(enter_stop_name)])),]
         exit_stop_table <- stop_table[which(gsub("(\\w+)\\W+.*","\\1",x=stop_table$parent_station_name) == gsub("(\\w+)\\W+.*","\\1",x=data[i,c(exit_stop_name)])),]
 
@@ -34,7 +34,7 @@ Theadwaysperformance <- function(enter_time,exit_time=NULL,enter_route_name,exit
           exit_stop_table <- exit_stop_table[which(exit_stop_table$parent_station_name == data[i,c(exit_stop_name)]),]
         }
         if((nrow(enter_stop_table) < 1 | nrow(exit_stop_table) < 1 ) & !is.na(data$route_id_exit[i])){
-          stop_table <- Tstopsbyroute(route_id = data$route_id_exit[i], api_key = api_key)
+          stop_table <- Tstopsbyroute(route_id = data$route_id_exit[i])
 
           enter_stop_table <- stop_table[which(gsub("(\\w+)\\W+.*","\\1",x=stop_table$parent_station_name) == gsub("(\\w+)\\W+.*","\\1",x=data[i,c(enter_stop_name)])),]
           exit_stop_table <- stop_table[which(gsub("(\\w+)\\W+.*","\\1",x=stop_table$parent_station_name) == gsub("(\\w+)\\W+.*","\\1",x=data[i,c(exit_stop_name)])),]
@@ -42,7 +42,7 @@ Theadwaysperformance <- function(enter_time,exit_time=NULL,enter_route_name,exit
       }
       # check other route stops in case user inputted wrong line but correct stop:
       if(is.na(data$route_id_enter[i]) & !is.na(data$route_id_exit[i])){
-        stop_table <- Tstopsbyroute(route_id = data$route_id_exit[i], api_key = api_key)
+        stop_table <- Tstopsbyroute(route_id = data$route_id_exit[i])
         enter_stop_table <- stop_table[which(gsub("(\\w+)\\W+.*","\\1",x=stop_table$parent_station_name) == gsub("(\\w+)\\W+.*","\\1",x=data[i,c(enter_stop_name)])),]
         exit_stop_table <- stop_table[which(gsub("(\\w+)\\W+.*","\\1",x=stop_table$parent_station_name) == gsub("(\\w+)\\W+.*","\\1",x=data[i,c(exit_stop_name)])),]
       }

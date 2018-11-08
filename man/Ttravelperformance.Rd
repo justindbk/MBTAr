@@ -7,7 +7,7 @@ Query performance statistics for many trips contained in a dataframe.
 Returns travel time performance statistics for many sets of trips with specified origin-destination pairs and specific time periods.
 }
 \usage{
-Tcheckperformance(enter_time, exit_time = NULL, enter_route_name, exit_route_name,
+Ttravelperformance(enter_time, exit_time = NULL, enter_route_name, exit_route_name,
 enter_stop_name, exit_stop_name, data, api_key)
 }
 \arguments{

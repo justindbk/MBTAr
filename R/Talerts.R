@@ -1,4 +1,4 @@
-Talerts <- function(api_key){
+Talerts <- function(){
   query <- "alerts"
   base_url <- paste0("https://api-v3.mbta.com/",query) # api key not needed for API V3
   rawdata <- readLines(base_url, warn = F)

@@ -1,13 +1,10 @@
 \name{Tstopsbyroute} \alias{Tstopsbyroute}
 \title{ Query stops by route } \description{
-Returns the stops for a particular route, specified by id or by name. }
-\usage{ Tstopsbyroute(route_id = NULL, route_name = NULL, api_key) }
-\arguments{ \item{route_id}{
-GTFS-compatible route_id value for which stops should be returned. Example:
-"Red" } \item{route_name}{ The full human-readable name for the route for
-which vehicle positions are returned. Example: "Red Line" } \item{api_key}{
-API key for MBTA API. To obtain one, visit the MBTA Developer Portal
-(\url{http://realtime.mbta.com/Portal/}) } }
+Returns the stops for a particular route, specified by id or by name.}
+\usage{ Tstopsbyroute(route_id = NULL, route_name = NULL)}
+\arguments{ \item{route_id}{ GTFS-compatible route_id value for which stops
+should be returned. Example: "Red" } \item{route_name}{ The full human-
+readable name for the route for which stops are returned. Example: "Red Line"}}
 
 \value{ \item{stop_id}{The GTFS-compatible unique identifier for the stop.
 Example: "70063"} \item{address}{Street address or intersection at which

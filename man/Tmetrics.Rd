@@ -47,7 +47,7 @@ Portal (\url{http://realtime.mbta.com/Portal/})}
 \examples{
   ## Authenticate:
   \dontshow{
-  test_key <- "hUOvci6zZkihtonl1_yDkg"
+  test_key <- "Zt0g4Tkp2kaLNxoKFXI_Kg"
   }
   mykey <- NULL
   mykey <- assign("mykey", value = test_key, envir = .GlobalEnv)

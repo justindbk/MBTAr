@@ -8,6 +8,7 @@ Talertbyid(alert_id) }
 %-maybe also 'usage' for other objects documented here.
 \arguments{
 \item{alert_id}{ Unique identifier for the alert. Example: "781" }
+}
 
 \value{ \item{alert_id}{The unique identifier for the alert}
 \item{effect_name}{The human-readable name for the effect. Example: "Shuttle
