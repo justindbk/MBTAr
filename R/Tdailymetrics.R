@@ -3,7 +3,7 @@ Tdailymetrics = function(route_id=NULL, from_date=(Sys.Date()-8), to_date=Sys.Da
   # from_date defaults to 8 days ago, must be in YYYY-MM-DD format
   # to_date defaults to yesterday for last week of performance, must be in YYYY-MM-DD format
   base_url <- paste0("http://realtime.mbta.com/developer/api/v2.1/",query,"?api_key=",api_key,"&format=json")
-  full_url <- paste0(base_url,ifelse(length(route_id)>0,paste("&route=",route_id,sep=""),""),"&from_service_date=",from_date,"&to_service_date=",to_date)
+  full_url <- paste0(base_url,ifelse(length(route_id)>0,paste0("&route=",route_id),""),"&from_service_date=",from_date,"&to_service_date=",to_date)
 
     rawdata <- readLines(full_url, warn = F)
     dl <- jsonlite::fromJSON(txt=rawdata,simplifyDataFrame = T,flatten=F)
