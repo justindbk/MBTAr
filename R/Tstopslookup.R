@@ -1,3 +1,22 @@
+#' Search for information on a stop with a given name. Useful when stop_id is not known.
+#'
+#' @param stop_name Name of stop to search for.
+#'
+#' @return Dataframe with row for each potential matching stop and the following columns:
+#' \item{route_id}{GTFS-compatible route_id for the stop match.}
+#' \item{direction_id}{Direction ID (0/1)}
+#' \item{direction_name}{Human-readable direction identifier}
+#' \item{stop_order}{Order in given direction of stop}
+#' \item{stop_id}{GTFS-compatible ID of stop}
+#' \item{stop_name}{Name of stop}
+#' \item{parent_station}{Parent station GTFS-compatible ID}
+#' \item{parent_station_name}{Parent station name}
+#' \item{stop_lat}{Stop latitude}
+#' \item{stop_lon}{Stop longitude}
+#' @export
+#'
+#' @examples
+#' Tstopslookup(stop_name = "Jackson Square")
 Tstopslookup = function(stop_name){
   # allroutes <- Troutes(api_key = api_key) # preload from package instead
   allroutes <- MBTAr::routes

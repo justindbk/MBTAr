@@ -1,4 +1,38 @@
-Theadwaysperformance <- function(enter_time,exit_time=NULL,enter_route_name,exit_route_name,enter_stop_name,exit_stop_name,data,api_key){
+
+
+#' Function to return performance data based on headways surrounding a given
+#' passenger's arrival time at a station on a given route.
+#'
+#' @param enter_time Entrance time of passenger at station
+#' @param exit_time End of window in which to look for train arrivals.
+#' @param enter_route_name Route name for which headways should be returned.
+#' @param exit_route_name Route name of exit stop for which headways should be
+#'   returned.
+#' @param enter_stop_name Stop name (alpha, non-numeric) designating which
+#'   station at which train headways information should be returned.
+#' @param exit_stop_name Stop name (alpha, non-numeric) designating towards
+#'   which station train headways information should be returned.
+#' @param data Dataframe with named variables given by other arguments.
+#' @param api_key API key for MBTA Performance API. To obtain one, visit the
+#'   MBTA Developer Portal (\url{https://mbta.com/developers/mbta-performance/})
+#'
+#' @return \item{headway_mean}{Average headway during the time period given
+#' between `enter_time` and `exit_time`.} \item{headway_bench}{Average of
+#' benchmark headways during time period given between `enter_time` and
+#' `exit_time`.} \item{headway_perf}{Average delay (actual headway - benchmark
+#' headway) during the time period given between `enter_time` and `exit_time`.}
+#' \item{next_train}{Arrival time of next train at given station that is after
+#' the entrance time given with `enter_time`.} \item{prev_train}{Arrival time of
+#' previous train to be at station on given route immediately prior to the
+#' entrance time given with `enter_time`.} \item{headway_guess}{Difference (in
+#' seconds) between arrival time of next train and entrance time given with
+#' `enter_time`.} \item{headway_bench_guess}{Benchmark headway time for the
+#' train arriving next after passenger's arrival. Divide by two to find
+#' benchmark wait time.}
+#' @export
+#'
+#' @examples
+Theadwaysperformance <- function(enter_time, exit_time=NULL, enter_route_name, exit_route_name, enter_stop_name, exit_stop_name, data, api_key){
 
   if(length(exit_time)<1){
     exit_time <- "exit_time_imputed"
