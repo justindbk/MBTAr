@@ -3,5 +3,4 @@
 ^cran-comments\.md$
 ^\.gitignore$
 ^README\.md$
-^NEWS\.md$
 ^revdep$
