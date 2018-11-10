@@ -1,6 +1,6 @@
 Talerts <- function(){
   query <- "alerts"
-  base_url <- paste0("https://api-v3.mbta.com/",query) # api key not needed for API V3
+  base_url <- paste0("https://api-v3.mbta.com/",query,"&api_key=8be3efdff2694d84aecb5cd16d0379ce") # api key not needed for API V3
   rawdata <- readLines(base_url, warn = F)
   dl <- jsonlite::fromJSON(txt=rawdata,simplifyDataFrame = T,flatten=F)
   # allout <- NULL

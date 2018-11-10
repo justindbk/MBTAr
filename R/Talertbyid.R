@@ -1,6 +1,6 @@
 Talertbyid <- function(alert_id){
   query <- "alerts"
-  base_url <- paste0("https://api-v3.mbta.com/",query,"/",alert_id)
+  base_url <- paste0("https://api-v3.mbta.com/",query,"/",alert_id,"&api_key=8be3efdff2694d84aecb5cd16d0379ce")
   # full_url <- paste0(base_url,"&include_access_alerts=",include_access_alerts,"&include_service_alerts=",include_service_alerts)
   rawdata <- readLines(base_url, warn = F)
   dl <- jsonlite::fromJSON(txt=rawdata,simplifyDataFrame = T,flatten=F)

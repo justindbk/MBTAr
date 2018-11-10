@@ -2,7 +2,7 @@ Tstopsbylocation <- function(lat, lon, radius = 0.01){
   # finds MBTA stops by latitude and longitude coordinates
   query <- "stops"
   base_url <- paste0("https://api-v3.mbta.com/",query)
-  full_url <- paste0(base_url,"?latitude=",lat,"&longitude=",lon,"&radius=",radius)
+  full_url <- paste0(base_url,"?latitude=",lat,"&longitude=",lon,"&radius=",radius,"&api_key=8be3efdff2694d84aecb5cd16d0379ce")
   rawdata <- readLines(full_url, warn = F)
   dl <- jsonlite::fromJSON(txt=rawdata,simplifyDataFrame = T)
   allout <- NULL

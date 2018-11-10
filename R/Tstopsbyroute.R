@@ -14,7 +14,7 @@ Tstopsbyroute <- function(route_id=NULL,route_name=NULL){
       stop("Please enter a valid GTFS-compatible route id or valid route name. Refer to the included dataframe 'routes' for this information.")
     }
   }
-  full_url <- paste0(base_url,"?route=",route_id)
+  full_url <- paste0(base_url,"?route=",route_id,"&api_key=8be3efdff2694d84aecb5cd16d0379ce")
   rawdata <- readLines(full_url, warn = F)
   dl <- jsonlite::fromJSON(txt=rawdata,simplifyDataFrame = T,flatten=F)
   allout <- NULL
