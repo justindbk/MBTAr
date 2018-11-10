@@ -16,16 +16,22 @@
 #' @export
 #'
 #' @examples
-#' Tstopslookup(stop_name = "Jackson Square")
+#' Tstopslookup(stop_name = "Mattapan")
 Tstopslookup = function(stop_name){
   # allroutes <- Troutes(api_key = api_key) # preload from package instead
   allroutes <- MBTAr::routes
   stopmatches <- NULL
   for(i in 1:length(allroutes$route_id)){
     allstops <- Tstopsbyroute(route_id = allroutes$route_id[i])
-    thismatches <- allstops[which(
-      gsub("(\\w+)\\W+.*","\\1",x=allstops$stop_name) == gsub("(\\w+)\\W+.*","\\1",x=stop_name) | # cuts name to first word
-        gsub("(\\w+)\\W+.*","\\1",x=allstops$parent_station_name) == gsub("(\\w+)\\W+.*","\\1",x=stop_name)),]
+    if(length(allstops$parent_station_name)>0){
+      match_index <- which(
+        gsub("(\\w+)\\W+.*","\\1",x=allstops$name) == gsub("(\\w+)\\W+.*","\\1",x=stop_name) | # cuts name to first word
+          gsub("(\\w+)\\W+.*","\\1",x=allstops$parent_station_name) == gsub("(\\w+)\\W+.*","\\1",x=stop_name))
+    } else{
+      match_index <- which(
+        gsub("(\\w+)\\W+.*","\\1",x=allstops$name) == gsub("(\\w+)\\W+.*","\\1",x=stop_name)) # cuts name to first word
+    }
+    thismatches <- allstops[match_index,]
     if(nrow(thismatches)>0){
       thismatches <- data.frame(route_id=allroutes$route_id[i],thismatches)
       stopmatches <- rbind(stopmatches,thismatches)
