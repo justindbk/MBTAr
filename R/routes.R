@@ -1,6 +1,6 @@
 #' Routes and respective information for the MBTA system
 #'
-#' @source From the MBTA GTFS API V3 in November 2018. \url{}
+#' @source From the MBTA GTFS API V3 in November 2018. \url{https://www.mbta.com/developers/gtfs}
 #' @format A data frame with columns:
 #' \describe{
 #'  \item{route_type}{A value between 0 and 4 indicating the type of vehicle use on this route. 0 is light rail, 1 is heavy rail, 2 is commuter rail, 3 is bus, and 4 is ferry.}
