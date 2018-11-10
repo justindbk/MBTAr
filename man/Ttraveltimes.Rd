@@ -30,7 +30,7 @@ The end of the time period that the travel time (arrival time at the destination
 }
   \item{api_key}{
 API key for MBTA API. To obtain one, visit the MBTA Developer
-Portal (\url{http://realtime.mbta.com/Portal/})}
+Portal (\url{https://mbta.com/developers/mbta-performance})}
 }
 
 \value{

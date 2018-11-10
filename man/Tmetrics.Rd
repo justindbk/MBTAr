@@ -31,7 +31,7 @@ The start of the time period that the metrics should be aggregated for; converts
 The end of the time period that the metrics should be aggregated for; converts to epoch time. Defaults to now (system time).
 }
 \item{api_key}{API key for MBTA API. To obtain one, visit the MBTA Developer
-Portal (\url{http://realtime.mbta.com/Portal/})}
+Portal (\url{https://mbta.com/developers/mbta-performance})}
 }
 
 \value{

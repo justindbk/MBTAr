@@ -35,7 +35,7 @@ Name of column in data that specifies human-readable text name for the stop wher
 Dataframe from which holds the previously named arguments.
 }
 \item{api_key}{API key for MBTA API. To obtain one, visit the MBTA Developer
-Portal (\url{http://realtime.mbta.com/Portal/})}
+Portal (\url{https://mbta.com/developers/mbta-performance/})}
 }
 
 \value{

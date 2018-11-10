@@ -22,7 +22,7 @@ The start of the time period that the metrics should be returned for. Must be in
 The end of the time period that the metrics should be returned for. Must be in YYYY-MM-DD format. Defaults to yesterday.
 }
 \item{api_key}{API key for MBTA API. To obtain one, visit the MBTA Developer
-Portal (\url{http://realtime.mbta.com/Portal/})}
+Portal (\url{https://mbta.com/developers/mbta-performance/})}
 }
 
 \value{
