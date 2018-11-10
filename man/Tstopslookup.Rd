@@ -26,5 +26,5 @@ Dataframe with row for each potential matching stop and the following columns:
 Search for information on a stop with a given name. Useful when stop_id is not known.
 }
 \examples{
-Tstopslookup(stop_name = "Jackson Square")
+Tstopslookup(stop_name = "Mattapan")
 }
