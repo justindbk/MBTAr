@@ -16,7 +16,9 @@
 #' @export
 #'
 #' @examples
-#' Tstopslookup(stop_name = "Mattapan")
+#' \dontrun{
+#' Tstopslookup(stop_name = "Mattapan") # this would take a long tiem (~70 seconds) so is left out here
+#' }
 Tstopslookup = function(stop_name){
   # allroutes <- Troutes(api_key = api_key) # preload from package instead
   allroutes <- MBTAr::routes
